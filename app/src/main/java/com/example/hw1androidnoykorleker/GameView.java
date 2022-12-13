@@ -22,7 +22,6 @@ public class GameView extends AppCompatActivity{
         setContentView(R.layout.game_view);
 
         carC = findViewById(R.id.car_center);carR = findViewById(R.id.car_rigth);carL = findViewById(R.id.car_left);
-        gridLayout = findViewById(R.id.grid_stones);
         handler.postDelayed(runnable, 500);
     }
 

@@ -6,94 +6,140 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameView">
-    <GridLayout
-        android:id="@+id/grid_stones"
-        android:useDefaultMargins="true"
-        android:rowCount="4"
-        android:columnCount="3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+
+    <LinearLayout
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        android:id="@+id/line1_stones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintTop_toTopOf="parent">
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_1"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone"
+            android:layout_weight="1"
+            tools:ignore="ContentDescription" />
+
         <ImageView
             android:visibility="invisible"
+            android:layout_weight="1"
             android:id="@+id/stone_2"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone" />
+
         <ImageView
             android:visibility="invisible"
+            android:layout_weight="1"
             android:id="@+id/stone_3"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone" />
+    </LinearLayout>
+    <LinearLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/line2_stones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintTop_toBottomOf="@+id/line1_stones">
         <ImageView
-            android:visibility="invisible"
             android:id="@+id/stone_4"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            android:visibility="invisible"
+            app:srcCompat="@drawable/stone"
+            android:layout_weight="1"/>
+
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_5"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone"
+            android:layout_weight="1"/>
+
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_6"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
-        <ImageView
-            android:visibility="invisible"
+            app:srcCompat="@drawable/stone"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <LinearLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/line3_stones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintTop_toBottomOf="@+id/line2_stones">
+    <ImageView
+        android:visibility="invisible"
             android:id="@+id/stone_7"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone"
+            android:layout_weight="1"/>
         <ImageView
-            android:visibility="invisible"
             android:id="@+id/stone_8"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            app:srcCompat="@drawable/stone"
+            android:visibility="invisible"
+            android:layout_weight="1"/>
         <ImageView
             android:visibility="invisible"
+            android:layout_weight="1"
             android:id="@+id/stone_9"
             android:layout_width="110dp"
             android:layout_height="110dp"
             app:srcCompat="@drawable/stone"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line4_stones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flow_horizontalAlign="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line3_stones">
+
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_10"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            android:layout_weight="1"
+            app:srcCompat="@drawable/stone" />
+
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_11"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            android:layout_weight="1"
+            app:srcCompat="@drawable/stone" />
+
         <ImageView
             android:visibility="invisible"
             android:id="@+id/stone_12"
             android:layout_width="110dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/stone"/>
+            android:layout_weight="1"
+            app:srcCompat="@drawable/stone" />
 
-    </GridLayout>
+    </LinearLayout>
+
     <LinearLayout
         android:id="@+id/life_layout"
         android:layout_width="wrap_content"
@@ -119,7 +165,9 @@
             android:layout_height="60dp"
             app:srcCompat="@drawable/heart" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom|end"
@@ -127,6 +175,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/game_screen"
         app:layout_constraintStart_toStartOf="@id/game_screen">
+
         <ImageView
             android:id="@+id/car_left"
             android:layout_width="130dp"
@@ -136,6 +185,7 @@
             android:scaleY="0.75"
             android:visibility="invisible"
             app:srcCompat="@drawable/car" />
+
         <ImageView
             android:id="@+id/car_center"
             android:layout_width="130dp"
@@ -144,6 +194,7 @@
             android:scaleX="0.75"
             android:scaleY="0.75"
             app:srcCompat="@drawable/car" />
+
         <ImageView
             android:id="@+id/car_rigth"
             android:layout_width="130dp"
